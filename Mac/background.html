@@ -1,0 +1,46 @@
+<script>
+	var docs;
+	
+	chrome.omnibox.onInputStarted.addListener(
+		function() {
+			if(!docs) {
+				var xhr = new XMLHttpRequest();
+		        xhr.onreadystatechange = function(data) {
+		          if (xhr.readyState == 4) {
+		            if (xhr.status == 200) {
+					  docs = eval("(" + xhr.responseText + ")");
+		            }
+		          }
+		        }
+		        var url = 'http://developer.apple.com/library/mac/navigation/library.json';
+		        xhr.open('GET', url, true);
+		        xhr.send();
+			}
+		});
+	
+
+	chrome.omnibox.onInputChanged.addListener(
+	  function(text, suggest) {
+		var results = [];
+		for(i = 0; i < docs.documents.length; i++) {
+			if(docs.documents[i][0].toLowerCase().indexOf(text.toLowerCase(), 0) > -1) {
+				results.push({
+					content:docs.documents[i][0],
+					description:docs.documents[i][0]
+				});
+			}
+		}
+	    suggest(results);
+	  });
+
+	chrome.omnibox.onInputEntered.addListener(
+	  function(text) {
+		for(i = 0; i < docs.documents.length; i++) {
+			if(docs.documents[i][0] == text) {
+				chrome.tabs.create({
+					url:'https://developer.apple.com/library/mac/navigation/' + docs.documents[i][9]
+				});
+			}
+		}
+	  });
+</script>

@@ -1,0 +1,15 @@
+{
+  "name" : "iOS Documentation Search",
+  "description" : "Searches Apple's iOS documentation.  To use, type 'ios' plus a search term into the Omnibox.",
+  "version" : "1.0.0",
+  "permissions" : [
+    "http://developer.apple.com/library/ios/navigation/library.json",
+	"tabs"
+  ],
+  "icons" : {
+    "16" : "icon-16.png",
+    "128" : "icon-128.png"
+  },
+  "omnibox": { "keyword" : "ios" },
+  "background_page" : "background.html"
+}
