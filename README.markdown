@@ -3,5 +3,5 @@ This is just a simple Chrome extension that allows you to quickly search Apple's
 INSTALL
 -------
 
- * [Mac Documentation](https://github.com/tylerhall/AppleDocsChromeExtension/master/-Packed/Mac.crx)
- * [iOS Documentation](https://github.com/tylerhall/AppleDocsChromeExtension/master/-Packed/iOS.crx)
+ * [Mac Documentation](https://github.com/tylerhall/AppleDocsChromeExtension/blob/master/_Packed/Mac.crx?raw=true)
+ * [iOS Documentation](https://github.com/tylerhall/AppleDocsChromeExtension/blob/master/_Packed/iOS.crx?raw=true)
