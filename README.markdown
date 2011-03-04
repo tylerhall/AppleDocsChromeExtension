@@ -1,5 +1,7 @@
 This is just a simple Chrome extension that allows you to quickly search Apple's Mac and iOS documentation using Chrome's omnibox and jump to the matching result on developer.apple.com.
 
+![Screenshot](http://cdn.tyler.fm/blog/chrome-apple.png)
+
 INSTALL
 -------
 
