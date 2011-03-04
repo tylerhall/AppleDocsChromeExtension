@@ -12,8 +12,7 @@
 		            }
 		          }
 		        }
-		        var url = 'http://developer.apple.com/library/mac/navigation/library.json';
-		        xhr.open('GET', url, true);
+		        xhr.open('GET', 'http://developer.apple.com/library/mac/navigation/library.json', true);
 		        xhr.send();
 			}
 		});
@@ -35,12 +34,15 @@
 
 	chrome.omnibox.onInputEntered.addListener(
 	  function(text) {
+		var url = 'https://developer.apple.com/library/mac/search/?q=' + text;
 		for(i = 0; i < docs.documents.length; i++) {
 			if(docs.documents[i][0] == text) {
-				chrome.tabs.create({
-					url:'https://developer.apple.com/library/mac/navigation/' + docs.documents[i][9]
-				});
+				url = 'https://developer.apple.com/library/mac/navigation/' + docs.documents[i][9];
+				break;
 			}
 		}
+		chrome.tabs.getSelected(null, function(tab) {
+			chrome.tabs.update(tab.id, { url:url });
+		});
 	  });
 </script>
