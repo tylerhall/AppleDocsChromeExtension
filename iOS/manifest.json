@@ -1,7 +1,7 @@
 {
   "name" : "iOS Documentation Search",
   "description" : "Searches Apple's iOS documentation.  To use, type 'ios' plus a search term into the Omnibox.",
-  "version" : "1.0.0",
+  "version" : "1.0.1",
   "permissions" : [
     "http://developer.apple.com/library/ios/navigation/library.json",
 	"tabs"

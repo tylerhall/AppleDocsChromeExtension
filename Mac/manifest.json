@@ -1,7 +1,7 @@
 {
   "name" : "Mac OS X Documentation Search",
   "description" : "Searches Apple's Mac OS X documentation.  To use, type 'mac' plus a search term into the Omnibox.",
-  "version" : "1.0.0",
+  "version" : "1.0.1",
   "permissions" : [
     "http://developer.apple.com/library/mac/navigation/library.json",
 	"tabs"
